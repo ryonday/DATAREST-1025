@@ -34,6 +34,4 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-rest',
             "com.github.derjust:spring-data-dynamodb:$sddVersion",
             'com.google.guava:guava'
-
-//    testCompile 'org.springframework:spring-boot-starter-test'
 }
