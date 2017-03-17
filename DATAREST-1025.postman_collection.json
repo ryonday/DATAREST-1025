@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DATAREST-1025",
+		"_postman_id": "067ef85d-613b-7f55-8cc6-99477bdb7e33",
+		"description": "A Postman collection to exercise Spring JIRA issue [DATAREST-1025](https://jira.spring.io/browse/DATAREST-1025)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Some Rando Foos",
+			"request": {
+				"url": "http://localhost:8080/create?howMany=5&hashKey=foo",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": "Create a number of random foos."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Foos",
+			"request": {
+				"url": "http://localhost:8080/foos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Foo",
+			"request": {
+				"url": "http://localhost:8080/foos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hash\": \"hash\",\n\t\"range\": \"range\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Replace a Foo",
+			"request": {
+				"url": "http://localhost:8080/foos/foo-1",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": "Put should address by ID and only update non-ID attributes!"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Foo",
+			"request": {
+				"url": "http://localhost:8080/foos/foo-1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": \"4bbfd464-d063-404c-a9ac-638ecc038890\",\n  \"moreData\": \"21dd0186-81dd-487a-94da-1cfa58d1c2b8\",\n  \"alsoData\": \"12784bb7-edf2-48c2-9fc2-912b13dc1240\",\n  \"range\": \"1\",\n  \"hash\": \"foo\"\n}"
+				},
+				"description": "Patch should address by ID and only update non-ID attributes!"
+			},
+			"response": []
+		}
+	]
+}

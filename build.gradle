@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
+group 'com.ryonday.springframework.boot'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+ext {
+    sddVersion = '4.5.0'
+
+}
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+
+    overriddenByDependencies = false
+
+    dependencies {
+        dependency 'com.google.guava:guava:20.0'
+    }
+    imports {
+        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.100'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-data-rest',
+            "com.github.derjust:spring-data-dynamodb:$sddVersion",
+            'com.google.guava:guava'
+
+//    testCompile 'org.springframework:spring-boot-starter-test'
+}
