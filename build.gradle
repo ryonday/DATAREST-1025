@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '1.5.2.RELEASE'
+    id 'org.springframework.boot' version '1.4.5.RELEASE'
 }
 
 group 'com.ryonday.springframework.boot'
@@ -11,7 +11,7 @@ apply plugin: 'idea'
 sourceCompatibility = JavaVersion.VERSION_1_8
 
 ext {
-    sddVersion = '4.5.0'
+    sddVersion = '4.4.1'
 }
 
 repositories {
@@ -34,6 +34,4 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-rest',
             "com.github.derjust:spring-data-dynamodb:$sddVersion",
             'com.google.guava:guava'
-
-//    testCompile 'org.springframework:spring-boot-starter-test'
 }
