@@ -3,6 +3,7 @@ package com.ryonday.datarest1025.controller;
 import com.ryonday.datarest1025.domain.Foo;
 import com.ryonday.datarest1025.repository.FooRepository;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class FooController {
 
     private final FooRepository fooRepository;
 
+    @Autowired
     public FooController(FooRepository fooRepository) {
         this.fooRepository = fooRepository;
     }

@@ -35,7 +35,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class DynamoConfig {
     private static final Logger logger = getLogger(DynamoConfig.class);
 
-    @Bean("amazonDynamoDB")
+    @Bean(name = "amazonDynamoDB")
     public AmazonDynamoDB dynamo(@Value("${DYNAMO_URL:http://192.168.99.100:8000}") String endpoint) throws InterruptedException {
         logger.info("DynamoDB URL: {}", endpoint);
 
