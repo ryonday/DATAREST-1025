@@ -12,8 +12,8 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 
 ext {
     sddVersion = '4.5.0'
-
 }
+
 repositories {
     mavenCentral()
 }
